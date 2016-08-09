@@ -1,0 +1,11 @@
+.item-title {
+    text-align: center;	
+}
+
+.item-image {
+	max-width: 100%;
+    height: 500px;
+    position: relative;
+    display: block;
+    margin: auto;
+}
