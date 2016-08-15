@@ -1,0 +1,18 @@
+.item {
+	float: left;
+	width: 33.33%;
+	padding: 15px;
+	background-color: #ffffff;
+}
+
+.item img {
+	max-height: 230px;
+	max-width: 100%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item img:hover {
+	border-radius: 50%;
+}
