@@ -1,0 +1,126 @@
+/*Setup default*/
+html,body {
+	margin:0;
+	padding:0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration:none;
+}
+
+img {
+	max-width:100%;
+}
+
+.clear {
+	clear: both;
+}
+
+body {
+	background-color: #FFFFFF;
+}
+/*End setup default*/
+
+@keyframes fadeinout {
+	50% {
+		color: red;
+		opacity: 1;
+		transform: translate(50%, 0);
+	}
+
+	0%, 100% {
+		opacity: 0;
+	}
+
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(100%, 0);
+	}
+
+}
+
+@keyframes happybirthday {
+	0%  {color: #F9E559;}
+    25%  {color: #6EB869;}
+    50%  {color: #F8DEBD;}
+    75%  {color: #6EB869;}
+    100% {color: #F9E559;}
+}
+
+h1 {
+	position: absolute;
+	text-align: center;
+	top: 30%;
+	left: 40%;
+	animation: happybirthday 5s ease infinite;
+}
+
+p {
+	top: 20%;
+	text-align: left;
+    color: green;
+    animation: fadeinout 10s ease infinite;
+}
+
+img#background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%; 
+	padding: 10px;
+}
+
+img#bong {
+	position: absolute;
+	width: 200px;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	animation: fadeinoutimg 20s ease infinite;
+}
+
+img#cake {
+	position: absolute;
+	width: 200px;
+	left: 30%;
+	top: 80%;
+}
+
+@keyframes fadeinoutimg {
+	50% {
+		color: red;
+		opacity: 1;
+	}
+
+	0%, 100% {
+		opacity: 0;
+	}
+
+}
+
+@keyframes balloon-animation {
+	50% {
+		transform: translate(, 50%);
+	}
+
+	0% {
+		transform: translate(0, 100%);
+	}
+
+	100% {
+		transform: translate(0, 0);
+	}
+
+}
+
+img#balloons {
+	position: absolute;
+	animation: balloon-animation 30s ease infinite;
+}
