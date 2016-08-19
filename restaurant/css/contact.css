@@ -1,0 +1,16 @@
+#contact-address {
+	float: left;
+	width: 50%;
+	padding-left: 30px;
+}
+
+img#contact-map {
+	position: relative;
+	padding-bottom: 20px;
+	float: right;
+	width: 50%;
+}
+
+span {
+	color: #4dbfd9;
+}
