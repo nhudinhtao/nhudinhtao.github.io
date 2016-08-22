@@ -72,6 +72,7 @@ a {
 
 .main_menu > ul > li > ul > li {
 	padding: 5px 10px;
+	margin-left: -40px;
 }
 
 .main_menu > ul > li > ul > li {
