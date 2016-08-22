@@ -1,7 +1,10 @@
 * {
-	margin: 0px; 
-	padding: 0px;
 	box-sizing: border-box;
+}
+
+html,body {
+	margin:0;
+	padding:0;
 }
 
 li {
@@ -49,13 +52,17 @@ a {
 	display: none;
 	position: absolute;
 	background: #00A69B;
-	top: 41px;
+	top: 40px;
 	width: 198px;
 	left: 0px;
+	z-index: 999;
+	text-align: left;
 }
 
 .main_menu > ul > li:hover ul {
 	display: block;
+	z-index: 999;
+	text-align: left;
 }
 
 .main_menu ul li:hover {
