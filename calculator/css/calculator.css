@@ -14,7 +14,7 @@ html {
 
 #calculator {
 	width: 325px;
-	height: 400px;
+	height: 365px;
 	
 	margin: 100px auto;
 	padding: 20px 20px 9px;
@@ -46,7 +46,14 @@ html {
 	letter-spacing: 1px;
 }
 
-.keys, .top {overflow: hidden;}
+.keys, .top {
+	overflow: hidden;
+}
+
+.keys sup {
+	font-size: 0.8em;
+	font-weight: normal;
+}
 
 .keys span, .top span.clear {
 	float: left;
@@ -70,6 +77,10 @@ html {
 	user-select: none;
 	
 	transition: all 0.2s ease;
+}
+
+.keys span.operatorExtend {
+	background: #FFF0F5;
 }
 
 .keys span.operator {

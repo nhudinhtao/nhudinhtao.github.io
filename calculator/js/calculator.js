@@ -1,6 +1,7 @@
 // Get all the keys from document
 var keys = document.querySelectorAll('#calculator span');
 var operators = ['+', '-', 'x', '÷'];
+var operatorsExtend = ['+', '-', 'x', '÷', '%', '(', ')', '<sup>2</sup>√', 'x!', '<sup>2</sup>', '<sup>3</sup>'];
 var decimalAdded = false;
 
 // Add onclick event to all the keys and perform operations
@@ -10,11 +11,59 @@ for(var i = 0; i < keys.length; i++) {
 		var input = document.querySelector('.screen');
 		var inputVal = input.innerHTML;
 		var btnVal = this.innerHTML;
+
+		console.log("inputVal=" + inputVal);
+		console.log("btnVal=" + btnVal);
 		
 		// Now, just append the key values (btnValue) to the input string and finally use javascript's eval function to get the result
 		// If clear key is pressed, erase everything
 		if(btnVal == 'C') {
 			input.innerHTML = '';
+			decimalAdded = false;
+		}
+
+		// If it is factorial
+		else if(btnVal == 'x!') {
+			var equation = inputVal;
+			var lastChar = equation[equation.length - 1];
+
+			if (inputVal.length > 0 && operators.indexOf(lastChar) < 0) {
+				input.innerHTML += btnVal.replace(/x!/g, '!');
+			}
+			
+			decimalAdded = false;
+		}
+
+		// If it is square
+		else if(btnVal == 'x<sup>2</sup>') {
+			var equation = inputVal;
+			var lastChar = equation[equation.length - 1];
+
+			if (inputVal.length > 0 && operators.indexOf(lastChar) < 0) {
+				input.innerHTML += btnVal.replace(/x\<sup\>2\<\/sup\>/g, '<sup\>2\<\/sup\>');
+			}
+			
+			decimalAdded = false;
+		}
+
+		// If it is cube
+		else if(btnVal == 'x<sup>3</sup>') {
+			console.log("btnVal=" + btnVal);
+			var equation = inputVal;
+			var lastChar = equation[equation.length - 1];
+			console.log("lastChar=" + lastChar);
+			console.log("operators.indexOf(lastChar)=" + operators.indexOf(lastChar));
+
+			if (inputVal.length > 0 && operators.indexOf(lastChar) < 0) {
+				input.innerHTML += btnVal.replace(/x\<sup\>3\<\/sup\>/g, '<sup\>3\<\/sup\>');
+			}
+			
+			decimalAdded = false;
+		}
+
+		// If it is square root
+		else if(btnVal == '<sup>2</sup>√' || btnVal == '%' || btnVal == '(' || btnVal == ')') {
+			input.innerHTML += btnVal;
 			decimalAdded = false;
 		}
 		
@@ -23,6 +72,56 @@ for(var i = 0; i < keys.length; i++) {
 			var equation = inputVal;
 			var lastChar = equation[equation.length - 1];
 			
+			var isFac = equation.indexOf('!');
+			if (isFac > 0) {
+				//var numFac = equation[isFac - 1];
+				var numFac = getLastNumber(operatorsExtend, equation, isFac);
+				var rval = factorial(numFac);
+				equation = equation.replace(numFac+'!', rval);
+			}
+
+			var isSquareRoot = equation.indexOf('<sup>2</sup>√');
+			if (isSquareRoot >= 0) {
+				var numSquareRoot = equation.substring(equation.indexOf('√')+1);
+				var rval = squareRoot(numSquareRoot);
+
+				console.log("numSquareRoot=" + numSquareRoot);
+				
+				equation = equation.replace('\<sup\>2\<\/sup\>√'+numSquareRoot, rval);
+			} else {
+
+				var isSquare = equation.indexOf('<sup>2</sup>');
+				if (isSquare > 0) {
+					//var numSquare = equation[isSquare - 1];
+					var numSquare = getLastNumber(operatorsExtend, equation, isSquare);
+					var rval = square(numSquare);
+					equation = equation.replace(numSquare+'\<sup\>2\<\/sup\>', rval);
+				}
+			}
+
+			var isCube = equation.indexOf('<sup>3</sup>');
+			if (isCube > 0) {
+				//var numCube = equation[isCube - 1];
+				var numCube = getLastNumber(operatorsExtend, equation, isCube);
+				var rval = cube(numCube);
+
+				equation = equation.replace(numCube+'\<sup\>3\<\/sup\>', rval);
+			}
+
+			var isPerCent = equation.indexOf('%');
+			
+			console.log("lastChar=" + lastChar);
+			console.log("isPerCent=" + isPerCent);
+			if (isPerCent > 0) {
+				//var numPerCent = equation[isPerCent - 1];
+				var numPerCent = getLastNumber(operatorsExtend, equation, isPerCent);
+				var rval = percent(numPerCent);
+
+				console.log("numPerCent=" + numPerCent);
+				console.log("rval=" + rval);
+				equation = equation.replace(numPerCent+'%', rval);
+			}
+
 			// Replace all instances of x and ÷ with * and / respectively. This can be done easily using regex and the 'g' tag which will replace all instances of the matched character/substring
 			equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
 			
@@ -82,4 +181,43 @@ for(var i = 0; i < keys.length; i++) {
 		// prevent page jumps
 		e.preventDefault();
 	} 
+}
+
+function factorial(n) {
+   var rval=1;
+    for (var i = 2; i <= n; i++) {
+        rval = rval * i;
+    }
+    return rval;
+}
+
+function square(n) {
+	return n * n;
+}
+
+function cube(n) {
+	return n * n * n;
+}
+
+function squareRoot(n) {
+	return Math.sqrt(n);
+}
+
+function percent(n) {
+	return n / 100;
+}
+
+function twoPowerOf(n) {
+	return Math.pow(2, n);
+}
+
+function getLastNumber(operatorsExtend, equation, lastIndex) {
+	var start = -1;
+	for(var i = 0; i < operatorsExtend.length; i++) {
+		var temp = equation.indexOf(operatorsExtend[i]);
+		if (temp > 0 && temp != lastIndex) {
+			start = temp;
+		}
+	}
+	return equation.substring(start+1, lastIndex);
 }
