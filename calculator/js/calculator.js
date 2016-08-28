@@ -15,7 +15,6 @@ for(var i = 0; i < keys.length; i++) {
 		console.log("inputVal=" + inputVal);
 		console.log("btnVal=" + btnVal);
 		
-		// Now, just append the key values (btnValue) to the input string and finally use javascript's eval function to get the result
 		// If clear key is pressed, erase everything
 		if(btnVal == 'C') {
 			input.innerHTML = '';
@@ -28,7 +27,7 @@ for(var i = 0; i < keys.length; i++) {
 			var lastChar = equation[equation.length - 1];
 
 			if (inputVal.length > 0 && operators.indexOf(lastChar) < 0) {
-				input.innerHTML += btnVal.replace(/x!/g, '!');
+				input.innerHTML += btnVal.replace('x!', '!');
 			}
 			
 			decimalAdded = false;
@@ -40,7 +39,7 @@ for(var i = 0; i < keys.length; i++) {
 			var lastChar = equation[equation.length - 1];
 
 			if (inputVal.length > 0 && operators.indexOf(lastChar) < 0) {
-				input.innerHTML += btnVal.replace(/x\<sup\>2\<\/sup\>/g, '<sup\>2\<\/sup\>');
+				input.innerHTML += btnVal.replace('x\<sup\>2\<\/sup\>', '<sup\>2\<\/sup\>');
 			}
 			
 			decimalAdded = false;
@@ -52,7 +51,7 @@ for(var i = 0; i < keys.length; i++) {
 			var lastChar = equation[equation.length - 1];
 
 			if (inputVal.length > 0 && operators.indexOf(lastChar) < 0) {
-				input.innerHTML += btnVal.replace(/x\<sup\>3\<\/sup\>/g, '<sup\>3\<\/sup\>');
+				input.innerHTML += btnVal.replace('x\<sup\>3\<\/sup\>', '<sup\>3\<\/sup\>');
 			}
 			
 			decimalAdded = false;
@@ -61,23 +60,6 @@ for(var i = 0; i < keys.length; i++) {
 		// If it is square root
 		else if(btnVal == '<sup>2</sup>√' || btnVal == '%' || btnVal == '(' || btnVal == ')') {
 			input.innerHTML += btnVal;
-			decimalAdded = false;
-		}
-
-		// If it is cube
-		else if(btnVal == '2<sup>x</sup>') {
-			console.log("btnVal=" + btnVal);
-			var equation = inputVal;
-			var lastChar = equation[equation.length - 1];
-			console.log("lastChar=" + lastChar);
-			console.log("operators.indexOf(lastChar)=" + operators.indexOf(lastChar));
-
-			//if (inputVal.length > 0 && operators.indexOf(lastChar) < 0) {
-				//input.innerHTML += btnVal.replace(/2\<sup\>x\<\/sup\> + lastChar, '<sup\>lastChar\<\/sup\>');
-				input.innerHTML += btnVal.replace('\<sup\>x\<\/sup\>', '<sup\>□\<\/sup\>');
-			//}
-			
-			decimalSmall = true;
 			decimalAdded = false;
 		}
 		
@@ -106,7 +88,6 @@ for(var i = 0; i < keys.length; i++) {
 
 				var isSquare = equation.indexOf('<sup>2</sup>');
 				if (isSquare > 0) {
-					//var numSquare = equation[isSquare - 1];
 					var numSquare = getLastNumber(operatorsExtend, equation, isSquare);
 					var rval = square(numSquare);
 					equation = equation.replace(numSquare+'\<sup\>2\<\/sup\>', rval);
@@ -115,7 +96,6 @@ for(var i = 0; i < keys.length; i++) {
 
 			var isCube = equation.indexOf('<sup>3</sup>');
 			if (isCube > 0) {
-				//var numCube = equation[isCube - 1];
 				var numCube = getLastNumber(operatorsExtend, equation, isCube);
 				var rval = cube(numCube);
 
@@ -124,15 +104,10 @@ for(var i = 0; i < keys.length; i++) {
 
 			var isPerCent = equation.indexOf('%');
 			
-			console.log("lastChar=" + lastChar);
-			console.log("isPerCent=" + isPerCent);
 			if (isPerCent > 0) {
-				//var numPerCent = equation[isPerCent - 1];
 				var numPerCent = getLastNumber(operatorsExtend, equation, isPerCent);
 				var rval = percent(numPerCent);
 
-				console.log("numPerCent=" + numPerCent);
-				console.log("rval=" + rval);
 				equation = equation.replace(numPerCent+'%', rval);
 			}
 
@@ -149,14 +124,6 @@ for(var i = 0; i < keys.length; i++) {
 			decimalAdded = false;
 		}
 		
-		// Basic functionality of the calculator is complete. But there are some problems like 
-		// 1. No two operators should be added consecutively.
-		// 2. The equation shouldn't start from an operator except minus
-		// 3. not more than 1 decimal should be there in a number
-		
-		// We'll fix these issues using some simple checks
-		
-		// indexOf works only in IE9+
 		else if(operators.indexOf(btnVal) > -1) {
 			// Operator is clicked
 			// Get the last character from the equation
@@ -198,6 +165,7 @@ for(var i = 0; i < keys.length; i++) {
 	} 
 }
 
+//Calculate n!
 function factorial(n) {
    var rval=1;
     for (var i = 2; i <= n; i++) {
@@ -206,23 +174,27 @@ function factorial(n) {
     return rval;
 }
 
+//Calculate n^2
 function square(n) {
 	return n * n;
 }
 
+//Calculate n^3
 function cube(n) {
 	return n * n * n;
 }
 
+//Calculate √n
 function squareRoot(n) {
 	return Math.sqrt(n);
 }
 
+//Calculate n%
 function percent(n) {
 	return n / 100;
 }
 
-
+//Get number to calculate
 function getLastNumber(operatorsExtend, equation, lastIndex) {
 	var start = -1;
 	for(var i = 0; i < operatorsExtend.length; i++) {
