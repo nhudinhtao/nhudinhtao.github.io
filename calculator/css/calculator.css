@@ -23,17 +23,14 @@ html {
 	border-radius: 3px;
 }
 
-.top span.clear {
-	float: left;
-}
-
 .top .screen {
 	height: 40px;
-	width: 212px;
+	width: 288px;
 	
 	float: right;
 	
 	padding: 0 10px;
+	margin-bottom: 10px;
 	
 	background: rgba(0, 0, 0, 0.2);
 	border-radius: 3px;
@@ -55,7 +52,7 @@ html {
 	font-weight: normal;
 }
 
-.keys span, .top span.clear {
+.keys span {
 	float: left;
 	position: relative;
 	top: 0;
@@ -79,12 +76,11 @@ html {
 	transition: all 0.2s ease;
 }
 
-.keys span.operatorExtend {
+.keys span.operator {
 	background: #FFF0F5;
 }
 
-.keys span.operator {
-	background: #FFF0F5;
+.keys span.operator.toRight {
 	margin-right: 0;
 }
 
@@ -93,7 +89,7 @@ html {
 	color: #888e5f;
 }
 
-.top span.clear {
+.keys span.clear {
 	background: #ff9fa8;
 	color: white;
 }
@@ -108,19 +104,7 @@ html {
 	color: #ffffff;
 }
 
-.top span.clear:hover {
+.keys span.clear:hover {
 	background: #f68991;
 	color: white;
-}
-
-.keys span:active {
-	top: 4px;
-}
-
-.keys span.eval:active {
-	top: 4px;
-}
-
-.top span.clear:active {
-	top: 4px;
 }

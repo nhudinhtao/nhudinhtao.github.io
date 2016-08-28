@@ -48,11 +48,8 @@ for(var i = 0; i < keys.length; i++) {
 
 		// If it is cube
 		else if(btnVal == 'x<sup>3</sup>') {
-			console.log("btnVal=" + btnVal);
 			var equation = inputVal;
 			var lastChar = equation[equation.length - 1];
-			console.log("lastChar=" + lastChar);
-			console.log("operators.indexOf(lastChar)=" + operators.indexOf(lastChar));
 
 			if (inputVal.length > 0 && operators.indexOf(lastChar) < 0) {
 				input.innerHTML += btnVal.replace(/x\<sup\>3\<\/sup\>/g, '<sup\>3\<\/sup\>');
@@ -64,6 +61,23 @@ for(var i = 0; i < keys.length; i++) {
 		// If it is square root
 		else if(btnVal == '<sup>2</sup>√' || btnVal == '%' || btnVal == '(' || btnVal == ')') {
 			input.innerHTML += btnVal;
+			decimalAdded = false;
+		}
+
+		// If it is cube
+		else if(btnVal == '2<sup>x</sup>') {
+			console.log("btnVal=" + btnVal);
+			var equation = inputVal;
+			var lastChar = equation[equation.length - 1];
+			console.log("lastChar=" + lastChar);
+			console.log("operators.indexOf(lastChar)=" + operators.indexOf(lastChar));
+
+			//if (inputVal.length > 0 && operators.indexOf(lastChar) < 0) {
+				//input.innerHTML += btnVal.replace(/2\<sup\>x\<\/sup\> + lastChar, '<sup\>lastChar\<\/sup\>');
+				input.innerHTML += btnVal.replace('\<sup\>x\<\/sup\>', '<sup\>□\<\/sup\>');
+			//}
+			
+			decimalSmall = true;
 			decimalAdded = false;
 		}
 		
@@ -172,6 +186,7 @@ for(var i = 0; i < keys.length; i++) {
 				decimalAdded = true;
 			}
 		}
+
 		
 		// if any other key is pressed, just append it
 		else {
@@ -207,9 +222,6 @@ function percent(n) {
 	return n / 100;
 }
 
-function twoPowerOf(n) {
-	return Math.pow(2, n);
-}
 
 function getLastNumber(operatorsExtend, equation, lastIndex) {
 	var start = -1;
