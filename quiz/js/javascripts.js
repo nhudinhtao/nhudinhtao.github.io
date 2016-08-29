@@ -25,6 +25,7 @@ var selections = []; //Array containing user choices
 var quiz = document.querySelector('.quiz'); //Quiz div object
 var next = document.querySelector('#next');
 var prev = document.querySelector('#prev');
+var replay = document.querySelector('#replay');
 
 
 //autorun javascript
@@ -53,6 +54,10 @@ function goPreview() {
   displayNext();
 }
 
+function goRePlay() {
+  location.reload();
+}
+
 function choose() {
   var radio = document.querySelector('input[name="answer"]:checked');
   if (typeof(radio) != 'undefined' && radio != null) {
@@ -64,8 +69,13 @@ function choose() {
 // Displays next requested element
 function displayNext() {
   var question = document.querySelector('#question');
+  var wrong = document.querySelector('#wrong');
   if (typeof(question) != 'undefined' && question != null) {
       question.remove();
+  }
+
+  if (typeof(wrong) != 'undefined' && wrong != null) {
+      wrong.remove();
   }
 
   if(questionCounter < questions.length){
@@ -73,19 +83,38 @@ function displayNext() {
     quiz.innerHTML += nextQuestion;
 
     // Controls display of 'prev' button
-    if(questionCounter === 1){
+    if(questionCounter >= 1){
       prev.style.visibility = 'visible';
-    } else if(questionCounter === 0){
+      next.style.visibility = 'visible';
+      replay.style.visibility = 'hidden';
+    } else if(questionCounter == 0){
       
       prev.style.visibility = 'hidden';
       next.style.visibility = 'visible';
+      replay.style.visibility = 'hidden';
     }
   } else {
       //display score
       var scoreElem = displayScore();
-      quiz.innerHTML += scoreElem/5;
+      var numWrong = 5 - scoreElem;
+      var warning = '<p id=\'wrong\'\>You have ' + numWrong + ' wrong ';
+      if (numWrong == 1) {
+        warning += 'question.';
+      } else {
+        warning += 'questions.';
+      }
+
+      warning += ' Please try again!</p>';
+      quiz.innerHTML += warning;
+
+      if (scoreElem == 5) {
+        window.location.href = "congratulation.html";
+      }
+
       prev.style.visibility = 'hidden';
       next.style.visibility = 'hidden';
+      replay.style.visibility = 'visible';
+
   }
 }
 
@@ -105,11 +134,10 @@ function displayScore() {
 // the answer selections
 function createQuestionElement(index) {
   var qElement = '<div id=question>';
-  qElement += '<h2>Question ' + (index + 1) + ':</h2>';
   qElement += '<p>';
   qElement += questions[index].question;
-  qElement += createRadios(index);
   qElement += '</p>';
+  qElement += createRadios(index);
   qElement += '</div>';
   
   return qElement;

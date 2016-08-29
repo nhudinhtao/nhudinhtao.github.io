@@ -1,7 +1,3 @@
-body {
-    font-family: Open Sans;
-}
-
 h1 {
     text-align: center;
 }
@@ -15,12 +11,40 @@ h1 {
     display:none;
 }
 
+#question {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+}
+
+#wrong {
+    color: orange;
+}
+
+p, li {
+    background-color: white;
+    border-radius: 3px;
+    opacity: 0.8;
+    padding: 10px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+input {
+    margin: 5px;
+}
+
 .button {
-    border:4px solid;
+    text-align: center;
+    border:1px solid;
     border-radius:5px;
-    width: 40px;
-    padding-left:5px;
-    padding-right: 5px;
+    width: 80px;
+    padding:5px;
     position: relative;
     float:right;
     background-color: #DCDCDC;
@@ -47,21 +71,15 @@ button {
     width:50%;
     margin:auto;
     padding: 0 25px 40px 10px;
-    background-color: #1E90FF;
+    background-color: #06CFFB;
     border:4px solid #B0E0E6;
     border-radius:5px;
-    color: #FFFFFF;
-    font-weight: bold;
-    box-shadow: 5px 5px 5px #888;
+    color: black;
+    font-weight: normal;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-#start {
-    display:none;
-    width: 90px;
 }
