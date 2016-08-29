@@ -1,0 +1,49 @@
+#content {
+	position: absolute;
+    top: 30%;
+    left: 40%;
+    text-align: center;
+}
+
+@keyframes congrat {
+	0%  {color: #F9E559;}
+    25%  {color: #6EB869;}
+    50%  {color: #F8DEBD;}
+    75%  {color: #6EB869;}
+    100% {color: #F9E559;}
+}
+
+h1 {
+	color: green;
+	animation: congrat 5s ease infinite;
+	font-size: 3em;
+}
+
+p {
+	color: gray;
+}
+
+@keyframes balloon-animation {
+	50% {
+		transform: translate(, 50%);
+	}
+
+	0% {
+		transform: translate(0, 100%);
+	}
+
+	100% {
+		transform: translate(0, 0);
+	}
+
+}
+
+img#balloons-left {
+	float: left;
+	animation: balloon-animation 30s ease infinite;
+}
+
+img#balloons-right {
+	float: right;
+	animation: balloon-animation 30s ease infinite;
+}
