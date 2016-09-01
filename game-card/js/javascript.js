@@ -51,7 +51,7 @@ function flip(card) {
     			current.css('opacity', '0');
     			$(card).css('opacity', '0');
     			current = null;
-    		}, 200);
+    		}, 500);
     	}
     }
 }
