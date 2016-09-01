@@ -22,12 +22,12 @@ function displayCard() {
     $('.content').html(html);
 }
 
-function flip(card) {
-	console.log(card);
-	// Flip this card
+// Flip card
+function flip(card) {	
     $(card).toggleClass('flipped');
 }
 
+//Shuffle items in array
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
