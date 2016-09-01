@@ -30,18 +30,23 @@ function displayCard() {
 function flip(card) {
     $(card).toggleClass('flipped');
 
+    // Disable click this card
+    $(card).css('pointer-events', 'none');
+
     if (!current) {
     	current = $(card);
     } else {
-    	console.log(current.attr('data-name'));
-    	console.log($(card).attr('data-name'));
+    	// Disable click all cards
+        $('.card').css('pointer-events', 'none');
+
     	if (current.attr('data-name') != $(card).attr('data-name')) {
     		//different
     		document.getElementById('incorrect-sound').play();
-    		setTimeout(function() {
-    			current.toggleClass('flipped');
-    			$(card).toggleClass('flipped');
-    			current = null;
+	    		setTimeout(function() {
+	    		current.toggleClass('flipped');
+	    		$(card).toggleClass('flipped');
+	    		current = null;
+	    		$('.card').css('pointer-events', 'auto');
     		}, 500);
     		
     	} else {
@@ -51,6 +56,8 @@ function flip(card) {
     			current.css('opacity', '0');
     			$(card).css('opacity', '0');
     			current = null;
+    			// Enable click all cards
+                $('.card').css('pointer-events', 'auto');
     		}, 500);
     	}
     }
