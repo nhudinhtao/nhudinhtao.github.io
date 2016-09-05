@@ -1,6 +1,6 @@
 var cards = ['JC.gif', 'JD.gif', 'JH.gif', 'JS.gif', 'KC.gif', 'KD.gif', 'KH.gif', 'KS.gif', 'N1.gif', 'N2.gif', 'QC.gif', 'QD.gif', 'QH.gif', 'QS.gif'];
 var current = null;
-var maxTime = remainingTime = 80;
+var maxTime = remainingTime = 70;
 var point = 0;
 var numberCards = cards.length/2;
 var running = null;
@@ -43,6 +43,8 @@ function startGame() {
     $('.btn-reset').css('opacity', '0');
     //close congras sound
     document.getElementById('congras-sound').load();
+    //close lose sound
+    document.getElementById('lose-sound').load();
 
     //play background sound
     document.getElementById('background-sound').play();
@@ -61,11 +63,14 @@ function startGame() {
         remainingTime--;
         $('progress').val(remainingTime / maxTime * 100);
 
-
         // Timeout => game over
         if (remainingTime == 0) {
             openModal('lose');
             $('.btn-reset').css('opacity', '1');
+            // Stop background music
+            document.getElementById('background-sound').load();
+            //close lose sound
+            document.getElementById('lose-sound').play();
         }
     }, 1000);
 }
@@ -98,8 +103,10 @@ function flip(card) {
             point++;
     		document.getElementById('correct-sound').play();
     		setTimeout(function() {
-    			current.css('opacity', '0');
-    			$(card).css('opacity', '0');
+    			current.css('opacity', '0').attr('onclick', '')
+                .children().children('img').css('cursor', 'default');
+    			$(card).css('opacity', '0').attr('onclick', '')
+                .children().children('img').css('cursor', 'default');
     			current = null;
 
                 // End game if enough point
