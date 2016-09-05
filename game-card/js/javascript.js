@@ -17,7 +17,7 @@ var running = null;
 
 function displayCard() {
     cards = getRandom(cards, numberCards);
-	//duplicating array - from 14 items to 28 items
+	//duplicating array - from 7 items to 14 items
 	cards = cards.concat(cards);
 
 	var length = cards.length;
@@ -41,7 +41,8 @@ function startGame() {
     // Close modal
     closeModal();
     $('.btn-reset').css('opacity', '0');
-
+    //close congras sound
+    document.getElementById('congras-sound').load();
 
     //play background sound
     document.getElementById('background-sound').play();
