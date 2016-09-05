@@ -7,12 +7,44 @@
 </head>
 <body>
 	<div class="wrap">
+		<div class="timer">
+	        <div class="progressbar" style="display: none;">
+	            <progress max="100" value="100"></progress>
+	        </div>
+	    </div>
 		<div class="content">
 		</div>
 	</div>
+
+	<div class="modal begin">
+	    <div class="dialog">
+	        <h1>Game Card</h1>
+	        <button class="btn btn-start" onclick="startGame()">Normal</button>
+	    </div>
+	</div>
+
+	<div class="modal win">
+	    <div class="dialog">
+	        <h1>
+	        	You are win<br/>
+	        	<button class="btn btn-reset" onclick="displayCard()">Play again</button>
+	        </h1>
+	    </div>
+	</div>
+
+	<div class="modal lose">
+	    <div class="dialog">
+	        <h1>
+	            Time over <br/>
+	            <button class="btn btn-reset" onclick="displayCard()">Play again</button>
+	        </h1>
+		</div>
+	</div>
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src='js/javascript.js'></script>
-	<audio autoplay>
+	<audio id="background-sound">
   			<source src="assets/nice.mp3" type="audio/mpeg">
 	</audio>
 	<audio id="incorrect-sound">
@@ -21,6 +53,10 @@
 
 	<audio id="correct-sound">
     	<source src="assets/correct.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="congras-sound">
+    	<source src="assets/congratulations.mp3" type="audio/mpeg">
 	</audio>
 
 </body>

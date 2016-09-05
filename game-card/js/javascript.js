@@ -1,15 +1,22 @@
 var cards = ['JC.gif', 'JD.gif', 'JH.gif', 'JS.gif', 'KC.gif', 'KD.gif', 'KH.gif', 'KS.gif', 'N1.gif', 'N2.gif', 'QC.gif', 'QD.gif', 'QH.gif', 'QS.gif'];
 var current = null;
+var maxTime = remainingTime = 80;
+var point = 0;
+var numberCards = cards.length/2;
+var running = null;
 
 //autorun javascript
 (function() {
 
-  // Display initial cards
-  displayCard();
+    //startGame();
+
+    // Display initial cards
+    displayCard();
   
 })();
 
 function displayCard() {
+    cards = getRandom(cards, numberCards);
 	//duplicating array - from 14 items to 28 items
 	cards = cards.concat(cards);
 
@@ -24,6 +31,42 @@ function displayCard() {
         '<div class="back"><img src="img/' + cards[i] + '"/></div></div></div>';
     };
     $('.content').html(html);
+
+    // Open begin modal
+    openModal('begin');
+}
+
+function startGame() {
+    point = 0;
+    // Close modal
+    closeModal();
+    $('.btn-reset').css('opacity', '0');
+
+
+    //play background sound
+    document.getElementById('background-sound').play();
+
+    // Start game
+    var current = null;
+    $('.card').css('pointer-events', 'auto');
+
+    // Reset progressbar
+    $('.progressbar').css('display', 'none');
+    // Start progressbar
+    remainingTime = maxTime;
+    $('.progressbar').css('display', 'block');
+    $('progress').val(100);
+    running = setInterval(function(){ 
+        remainingTime--;
+        $('progress').val(remainingTime / maxTime * 100);
+
+
+        // Timeout => game over
+        if (remainingTime == 0) {
+            openModal('lose');
+            $('.btn-reset').css('opacity', '1');
+        }
+    }, 1000);
 }
 
 // Flip card
@@ -42,7 +85,7 @@ function flip(card) {
     	if (current.attr('data-name') != $(card).attr('data-name')) {
     		//different
     		document.getElementById('incorrect-sound').play();
-	    		setTimeout(function() {
+	    	setTimeout(function() {
 	    		current.toggleClass('flipped');
 	    		$(card).toggleClass('flipped');
 	    		current = null;
@@ -50,14 +93,33 @@ function flip(card) {
     		}, 500);
     		
     	} else {
-    		//equalize'
+    		//equalize
+            point++;
     		document.getElementById('correct-sound').play();
     		setTimeout(function() {
     			current.css('opacity', '0');
     			$(card).css('opacity', '0');
     			current = null;
-    			// Enable click all cards
-                $('.card').css('pointer-events', 'auto');
+
+                // End game if enough point
+                if (point == numberCards) {
+                    // Reset progressbar
+                    $('.progressbar').css('display', 'none');
+                    openModal('win');
+                    $('.btn-reset').css('opacity', '1');
+                    if (running != null) {
+                        clearInterval(running);
+                        running = null;
+                    }
+                    // Stop background music
+                    document.getElementById('background-sound').load();
+
+                    //play congras sound
+                    document.getElementById('congras-sound').play();
+                } else {
+                    // Enable click all cards
+                    $('.card').css('pointer-events', 'auto');
+                }
     		}, 500);
     	}
     }
@@ -81,4 +143,28 @@ function shuffle(array) {
   }
 
   return array;
+}
+
+//get random n items in array
+function getRandom(arr, n) {
+    var result = new Array(n),
+        len = arr.length,
+        taken = new Array(len);
+    if (n > len)
+        throw new RangeError("getRandom: more elements taken than available");
+    while (n--) {
+        var x = Math.floor(Math.random() * len);
+        result[n] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len;
+    }
+    return result;
+}
+
+function openModal(type) {
+    $('.modal').hide();
+    $('.modal.' + type).fadeIn();
+}
+
+function closeModal() {
+    $('.modal').hide();
 }
