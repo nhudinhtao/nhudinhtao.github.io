@@ -3,7 +3,7 @@ var current = null;
 var maxTime = remainingTime = 70;
 var point = 0;
 var numberCards = cards.length/2;
-var running = null;
+var intervalId = null;
 
 //autorun javascript
 (function() {
@@ -59,12 +59,13 @@ function startGame() {
     remainingTime = maxTime;
     $('.progressbar').css('display', 'block');
     $('progress').val(100);
-    running = setInterval(function(){ 
+    intervalId = setInterval(function(){ 
         remainingTime--;
         $('progress').val(remainingTime / maxTime * 100);
 
         // Timeout => game over
         if (remainingTime == 0) {
+            clearInterval(intervalId);
             openModal('lose');
             $('.btn-reset').css('opacity', '1');
             // Stop background music
@@ -111,14 +112,12 @@ function flip(card) {
 
                 // End game if enough point
                 if (point == numberCards) {
+                    console.log(intervalId);
+                    clearInterval(intervalId);
                     // Reset progressbar
                     $('.progressbar').css('display', 'none');
                     openModal('win');
                     $('.btn-reset').css('opacity', '1');
-                    if (running != null) {
-                        clearInterval(running);
-                        running = null;
-                    }
                     // Stop background music
                     document.getElementById('background-sound').load();
 

@@ -124,8 +124,16 @@ h1 {
 }
 
 .modal.win .dialog h1 {
-	margin-top: 65px;
     animation: winner 5s ease infinite;
+}
+
+.modal.lose .dialog img {
+    float: left;
+    width: 300px;
+}
+
+.modal.win .dialog img {
+    width: 400px;
 }
 
 .btn {
