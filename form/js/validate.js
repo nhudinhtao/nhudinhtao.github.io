@@ -21,7 +21,7 @@ $('#form-register').on('submit', function() {
 		$('#password').next('span').text('Password is required.');
 		rval = rval && false;
 	} else if ($('#password').val().trim().length < 6) {
-		$('#password').next('span').text('Password has to longer 6 letters.');
+		$('#password').next('span').text('Password has to longer than 6 letters.');
 		rval = rval && false;
 	} else {
 		$('#password').next('span').text('');
