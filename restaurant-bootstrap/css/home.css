@@ -1,0 +1,72 @@
+.item {
+	position: relative;
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid grey;
+}
+
+.imageview img {
+	background-color: white;
+	width: 100%;
+	cursor: pointer;
+}
+
+.bg {
+	position: absolute;
+	width: 50%;
+    padding: 10px;
+    margin: 15px;
+	top: 0;
+	left: 0;
+	border-radius: 10px;
+	background: linear-gradient(top, rgba(2, 0, 0, 0.45), rgba(2, 0, 0, 0.7));
+	background: -webkit-linear-gradient(top, rgba(2, 0, 0, 0.45), rgba(2, 0, 0, 0.7));
+    background: -moz-linear-gradient(top, rgba(2, 0, 0, 0.45), rgba(2, 0, 0, 0.7));
+    background: -o-linear-gradient(top, rgba(2, 0, 0, 0.45), rgba(2, 0, 0, 0.7));
+    background: -ms-linear-gradient(top, rgba(2, 0, 0, 0.45), rgba(2, 0, 0, 0.7));
+}
+
+.bg .textview {
+    color: #ffffff;
+    text-align: left;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: .4em;
+}
+
+/* Extra small devices (phones, up to 480px) */
+@media all and (max-width: 767px) {
+	.bg {
+		display: none;
+	}
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+	.bg {
+		display: block;
+		width: 95%;
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media all and (min-width: 992px) {
+	.bg {
+		display: block;
+		width: 50%;
+	}
+}
+
+@keyframes autochangecolor {
+	0%  {color: #F9E559;}
+    25%  {color: #6EB869;}
+    50%  {color: #F8DEBD;}
+    75%  {color: #6EB869;}
+    100% {color: #F9E559;}
+}
+
+h1 {
+	margin-bottom: 0px;
+	text-align: center;
+	left: 40%;
+	animation: autochangecolor 5s ease infinite;
+}
