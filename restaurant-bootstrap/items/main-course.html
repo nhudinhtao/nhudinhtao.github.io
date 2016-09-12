@@ -13,128 +13,156 @@
 	<link href="/restaurant-bootstrap/css/menu.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="main_menu">
-			<ul>
-				<li><a href="/restaurant/index.html">Home</a></li>
-				<li><a href="/restaurant/about.html">About</a></li>
-				<li><a href="">Menu</a>
-					<ul>
-						<li><a href="/restaurant/items/starter.html">Starter</a></li>
-						<li><a href="/restaurant/items/main-course.html">Main Course</a></li>
-						<li><a href="/restaurant/items/desserts.html">Desserts</a></li>
+	<header class="container">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="/restaurant-bootstrap/index.html">Home</a></li>
+						<li><a href="/restaurant-bootstrap/about.html">About </a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="/restaurant-bootstrap/items/starter.html">Starter </a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="/restaurant-bootstrap/items/main-course.html">Main Course </a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="/restaurant-bootstrap/items/desserts.html">Desserts </a></li>
+							</ul>
+						</li>
+						<li><a href="/restaurant-bootstrap/contact.html">Contact </a></li>
 					</ul>
-				</li>
-				<li><a href="/restaurant/contact.html">Contact</a></li>
-			</ul>
-			<div class="clear"></div>
-		</div>
-		<div class="main_content">
-			<h1>Main Course</h1>
-			<div class="cell">
-				<div class="thumb">
-					<img src="/restaurant/img/Jumbo-Crab-meat-beef-fillet-mignon.jpg" alt="Jumbo-Crab-meat-beef-fillet-mignon.jpg" title="Jumbo Crab meat &amp; beef fillet mignon" />
-				</div>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	</header>
+	<section class="container">
+		<h1>Main Course</h1>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="cell">
+					<div class="thumb">
+						<img src="/restaurant-bootstrap/img/Jumbo-Crab-meat-beef-fillet-mignon.jpg" alt="Jumbo-Crab-meat-beef-fillet-mignon.jpg" title="Jumbo Crab meat &amp; beef fillet mignon" />
+					</div>
 
-				<div class="bg">
-					<a href="/restaurant/items/details/main-course1.html">
-						<div class="msg-wrap">
-							<div class="msg">
-								Jumbo Crab meat &amp; beef fillet mignon
+					<div class="bg">
+						<a href="/restaurant-bootstrap/items/details/main-course1.html">
+							<div class="msg-wrap">
+								<div class="msg">
+									Jumbo Crab meat &amp; beef fillet mignon
+								</div>
 							</div>
-						</div>
-					</a>
+						</a>
+					</div>
 				</div>
 			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="cell">
+					<div class="thumb">
+						<img src="/restaurant-bootstrap/img/Beef-rib-eyes-beef-cube-roll.jpg" alt="Beef-rib-eyes-beef-cube-roll.jpg" title="Beef rib-eyes beef cube roll" />
+					</div>
 
-			<div class="cell">
-				<div class="thumb">
-					<img src="/restaurant/img/Beef-rib-eyes-beef-cube-roll.jpg" alt="Beef-rib-eyes-beef-cube-roll.jpg" title="Beef rib-eyes beef cube roll" />
-				</div>
-
-				<div class="bg">
-					<a href="/restaurant/items/details/main-course2.html">
-						<div class="msg-wrap">
-							<div class="msg">
-								Beef rib-eyes “beef cube roll”
+					<div class="bg">
+						<a href="/restaurant-bootstrap/items/details/main-course2.html">
+							<div class="msg-wrap">
+								<div class="msg">
+									Beef rib-eyes “beef cube roll”
+								</div>
 							</div>
-						</div>
-					</a>
+						</a>
+					</div>
 				</div>
 			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="cell">
+					<div class="thumb">
+						<img src="/restaurant-bootstrap/img/Beef-strip-loin.jpg" alt="Beef-strip-loin.jpg" title="Beef strip-loin" />
+					</div>
 
-			<div class="cell">
-				<div class="thumb">
-					<img src="/restaurant/img/Beef-strip-loin.jpg" alt="Beef-strip-loin.jpg" title="Beef strip-loin" />
-				</div>
-
-				<div class="bg">
-					<a href="/restaurant/items/details/main-course3.html">
-						<div class="msg-wrap">
-							<div class="msg">
-								Beef strip-loin
+					<div class="bg">
+						<a href="/restaurant-bootstrap/items/details/main-course3.html">
+							<div class="msg-wrap">
+								<div class="msg">
+									Beef strip-loin
+								</div>
 							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<div class="cell">
-				<div class="thumb">
-					<img src="/restaurant/img/Grilled-T-Bone-steak.jpg" alt="Grilled-T-Bone-steak.jpg" title="Grilled T-Bone steak" />
-				</div>
-
-				<div class="bg">
-					<a href="/restaurant/items/details/main-course4.html">
-						<div class="msg-wrap">
-							<div class="msg">
-								Grilled T-Bone steak
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<div class="cell">
-				<div class="thumb">
-					<img src="/restaurant/img/Lamb-chops.jpg" alt="Lamb-chops.jpg" title="Lamb chops" />
-				</div>
-
-				<div class="bg">
-					<a href="/restaurant/items/details/main-course5.html">
-						<div class="msg-wrap">
-							<div class="msg">
-								Lamb chops
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<div class="cell">
-				<div class="thumb">
-					<img src="/restaurant/img/Local-beef-fillet.jpg" alt="Local-beef-fillet.jpg" title="Local beef fillet " />
-				</div>
-
-				<div class="bg">
-					<a href="/restaurant/items/details/main-course6.html">
-						<div class="msg-wrap">
-							<div class="msg">
-								Local beef fillet
-							</div>
-						</div>
-					</a>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div id="footer">
-			<p>
-				<i class="fa fa-home"></i> Au Delice &amp; Le Restaurant d'Arthur - 2B Ngo Thi Nham st., Hanoi - Vietnam</br></br>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="cell">
+					<div class="thumb">
+						<img src="/restaurant-bootstrap/img/Grilled-T-Bone-steak.jpg" alt="Grilled-T-Bone-steak.jpg" title="Grilled T-Bone steak" />
+					</div>
 
-				<i class="fa fa-phone"></i> Reservation call (04) 39449288 - 0904150383 - Fax: (04) 39449289
-			</p>
+					<div class="bg">
+						<a href="/restaurant-bootstrap/items/details/main-course4.html">
+							<div class="msg-wrap">
+								<div class="msg">
+									Grilled T-Bone steak
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="cell">
+					<div class="thumb">
+						<img src="/restaurant-bootstrap/img/Lamb-chops.jpg" alt="Lamb-chops.jpg" title="Lamb chops" />
+					</div>
+
+					<div class="bg">
+						<a href="/restaurant-bootstrap/items/details/main-course5.html">
+							<div class="msg-wrap">
+								<div class="msg">
+									Lamb chops
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4">
+				<div class="cell">
+					<div class="thumb">
+						<img src="/restaurant-bootstrap/img/Local-beef-fillet.jpg" alt="Local-beef-fillet.jpg" title="Local beef fillet " />
+					</div>
+
+					<div class="bg">
+						<a href="/restaurant-bootstrap/items/details/main-course6.html">
+							<div class="msg-wrap">
+								<div class="msg">
+									Local beef fillet
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+	</section>
+	<footer class="container">
+		<p>
+			<i class="fa fa-home"></i> Au Delice &amp; Le Restaurant d'Arthur - 2B Ngo Thi Nham st., Hanoi - Vietnam</br></br>
+
+			<i class="fa fa-phone"></i> Reservation call (04) 39449288 - 0904150383 - Fax: (04) 39449289
+		</p>
+	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

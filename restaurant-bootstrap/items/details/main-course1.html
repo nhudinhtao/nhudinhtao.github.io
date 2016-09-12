@@ -5,40 +5,63 @@
 		Welcome to Au Delice &amp; Le Restaurant d'Arthur!
 	</title>
 	<meta charset="utf-8"/>
-	<link href="/restaurant/css/style.css" rel="stylesheet" type="text/css"/>
-	<link href="/restaurant/css/detail.css" rel="stylesheet" type="text/css"/>
-	<link href="/restaurant/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="/restaurant-bootstrap/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+	<link href="/restaurant-bootstrap/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="/restaurant-bootstrap/css/detail.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-	<div class="wrapper">
-		<div class="main_menu">
-			<ul>
-				<li><a href="/restaurant/index.html">Home</a></li>
-				<li><a href="/restaurant/about.html">About</a></li>
-				<li><a href="">Menu</a>
-					<ul>
-						<li><a href="/restaurant/items/starter.html">Starter</a></li>
-						<li><a href="/restaurant/items/main-course.html">Main Course</a></li>
-						<li><a href="/restaurant/items/desserts.html">Desserts</a></li>
-					</ul>
-				</li>
-				<li><a href="/restaurant/contact.html">Contact</a></li>
-			</ul>
-			<div class="clear"></div>
-		</div>
-		<div class="main_content">
-			<p>Jumbo Crab meat &amp; beef fillet mignon</p>
-			<a href="/restaurant/items/main-course.html">
-				<img src="/restaurant/img/Jumbo-Crab-meat-beef-fillet-mignon.jpg" alt="Jumbo-Crab-meat-beef-fillet-mignon.jpg" title="Jumbo Crab meat &amp; beef fillet mignon" />
-			</a>
-		</div>
-		<div id="footer">
-			<p>
-				<i class="fa fa-home"></i> Au Delice &amp; Le Restaurant d'Arthur - 2B Ngo Thi Nham st., Hanoi - Vietnam</br></br>
+	<header class="container">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
 
-				<i class="fa fa-phone"></i> Reservation call (04) 39449288 - 0904150383 - Fax: (04) 39449289
-			</p>
-		</div>
-	</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="/restaurant-bootstrap/index.html">Home</a></li>
+						<li><a href="/restaurant-bootstrap/about.html">About </a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="/restaurant-bootstrap/items/starter.html">Starter </a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="/restaurant-bootstrap/items/main-course.html">Main Course </a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="/restaurant-bootstrap/items/desserts.html">Desserts </a></li>
+							</ul>
+						</li>
+						<li><a href="/restaurant-bootstrap/contact.html">Contact </a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	</header>
+	<section class="container">
+		<p>Jumbo Crab meat &amp; beef fillet mignon</p>
+		<a href="/restaurant-bootstrap/items/main-course.html">
+			<img src="/restaurant-bootstrap/img/Jumbo-Crab-meat-beef-fillet-mignon.jpg" alt="Jumbo-Crab-meat-beef-fillet-mignon.jpg" title="Jumbo Crab meat &amp; beef fillet mignon" />
+		</a>
+	</section>
+	<footer class="container">
+		<p>
+			<i class="fa fa-home"></i> Au Delice &amp; Le Restaurant d'Arthur - 2B Ngo Thi Nham st., Hanoi - Vietnam</br></br>
+
+			<i class="fa fa-phone"></i> Reservation call (04) 39449288 - 0904150383 - Fax: (04) 39449289
+		</p>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
