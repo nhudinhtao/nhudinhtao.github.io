@@ -89,6 +89,10 @@ h2 {
 	padding: 30px;
 }
 
+.thumbnail {
+	border: 0;
+}
+
 section.container-fluid {
 	text-align: center;
 	background-color: #f0f0f0;
@@ -112,10 +116,10 @@ input[type="email"] {
     font-size: 16px;
 }
 
-button#send-email {
+button#send-mail {
     margin-left: -42px;
     border: 0; 
-    background:url(img/send.jpg) no-repeat;
+    background: transparent;
 }
 
 section#load-more {
