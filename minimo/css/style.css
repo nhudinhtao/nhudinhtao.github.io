@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'playfair_display_regular';
+    src: url('../font/playfairdisplay-regular-webfont.eot');
+    src: url('../font/playfairdisplay-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/playfairdisplay-regular-webfont.svg#playfair_displayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'inconsolata_regular';
+    src: url('../font/inconsolata-regular-webfont.eot');
+    src: url('../font/inconsolata-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/inconsolata-regular-webfont.svg#inconsolataregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+	font-family: 'playfair_display_regular';
+	font-size: 14px;
+	color: #626262;
+}
+
+.navbar {
+	text-transform: uppercase;
+}
+
+.navbar-brand {
+	font-family: 'inconsolata_regular';
+	text-transform: uppercase;
+	font-size: 30px;
+	color: #000000;
+}
+
+.navbar-default {
+	background-color: #ffffff;
+	border-color: #ffffff;
+}
+
+.nav>li>a {
+	padding: 10px 0px;
+	margin-left: 100px;
+	margin-right: 0;
+}
+
+@media (min-width: 1200px) {
+	.container {
+    	width: 1062px;
+    }
+}
+
+nav.navbar.navbar-default .container-fluid {
+	padding-right: 0;
+    padding-left: 0;
+}
+
+img {
+	width: 100%;
+}
+
+section.container {
+	padding: 0 80px;
+}
+
+.description {
+	margin-top: 100px;
+}
+
+.content-type, .comment {
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+.description p, .item p {
+	padding: 15px 0;
+}
+
+.comment {
+	margin-bottom: 100px;
+}
+
+.col-xs-12, .col-sm-12, .col-md-6 {
+	padding: 30px;
+}
+
+section.container-fluid {
+	text-align: center;
+	background-color: #f0f0f0;
+	height: 290px;
+	margin-bottom: 70px;
+}
+
+section.container-fluid h2 {
+	margin-top: 80px;
+}
+
+input[type="email"] {
+	margin-top: 80px;
+	width: 400px;
+    padding: 0px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #435160;
+    outline: none;
+    color: #6D7781;
+    font-size: 16px;
+}
+
+button#send-email {
+    margin-left: -42px;
+    border: 0; 
+    background:url(img/send.jpg) no-repeat;
+}
+
+section#load-more {
+	text-align: center;
+}
+
+section#load-more button { 
+	border: 1px solid #f0f0f0;
+	background-color: #ffffff;
+	padding: 10px 30px;
+}
+
+footer.container {
+	padding: 0 80px;
+}
+
+footer a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #626262; 
+}
+
+footer #footer-right {
+	float: right;
+}
