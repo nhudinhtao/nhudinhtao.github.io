@@ -39,10 +39,8 @@ input[type="email"] {
     padding: 0px 0px;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid #435160;
+    border-bottom: 1px solid #000000;
     outline: none;
-    color: #6D7781;
-    font-size: 16px;
 }
 
 button#send-mail {
