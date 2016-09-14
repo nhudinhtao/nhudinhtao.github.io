@@ -18,6 +18,16 @@
 
 }
 
+@font-face {
+    font-family: 'ubuntu_light';
+    src: url('../font/ubuntu-light-webfont.eot');
+    src: url('../font/ubuntu-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/ubuntu-light-webfont.svg#ubuntulight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
 	font-family: 'playfair_display_regular';
 	font-size: 14px;

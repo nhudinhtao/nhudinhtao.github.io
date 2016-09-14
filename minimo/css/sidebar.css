@@ -1,0 +1,180 @@
+section.container .description, sidebar.container .about-me {
+	margin-top: 100px;
+}
+
+section.container .description h2 {
+	margin-bottom: 30px;
+}
+
+section.container .description p {
+	margin-bottom: 30px;
+}
+
+section.container .description img {
+	margin-bottom: 60px;
+}
+
+section.container .description p#quote {
+	padding: 0 25px;
+}
+
+section.container .share {
+	float: right;
+	margin-top: 30px;
+}
+
+section.container .share a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #626262;
+	padding: 0 5px;
+}
+
+section.container-fluid {
+	margin-top: 80px;
+	background-color: #f5f5f5;
+}
+
+section.container-fluid .like-more {
+	margin: 80px 60px;
+}
+
+.item .thumbnail {
+	border: 0;
+	background-color: transparent;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 0;
+}
+
+.like-more .content-type {
+	margin-bottom: 40px;
+	margin-left: 20px;
+}
+
+.item .title {
+	margin-left: 20px;
+	font-size: 20px;	
+}
+
+.post-comment {
+	margin: 40px 0;
+}
+
+.avatar {
+	width: 70px;
+	height: 70px;
+	float: left;
+}
+
+.post-content {
+	margin-left: 110px;
+}
+
+.comment {
+	margin-top: 65px;
+}
+
+.post-content .comment-content {
+	margin-top: 20px;
+	margin-bottom: 25px;
+}
+
+.post-content .title {
+	font-weight: bold;
+}
+
+.post-content input {
+	width: 100%;
+    padding: 30px;
+    background: transparent;
+    border: 1px solid #c8c8c8;
+    outline: none;
+    border-radius: 5px;
+}
+
+.connect-with {
+	float: right;
+	margin: 40px 0;
+}
+
+.connect-with a {
+	text-decoration: none;
+	color: #626262;
+	padding: 0 5px;
+	font-size: 14px;
+}
+
+/* Extra small devices (phones, up to 480px) */
+@media all and (max-width: 767px) {
+	div.col-xs-12.col-md-8 {
+		padding-right: 0;
+	    padding-left: 0;
+	}
+
+	div.col-xs-6.col-md-4 {
+		padding-right: 0;
+	    padding-left: 0;	
+	}
+}
+
+@media all and (min-width: 768px) {
+	div.col-xs-12.col-md-8 {
+		padding-right: 25px;
+	    padding-left: 0;
+	}
+
+	div.col-xs-6.col-md-4 {
+		padding-right: 0;
+	    padding-left: 25px;	
+	}
+}
+
+.about-me img {
+	width: 100%;
+}
+
+.about-me #title{
+	font-size: 24px;
+	margin-top: 30px;
+}
+
+.about-me #description{
+	font-size: 12px;
+	margin: 20px 0; 
+}
+
+.connect-me a {
+	text-decoration: none;
+	color: #626262;
+	padding: 0 5px;
+	font-size: 14px;
+	float: right;
+}
+
+.top-post {
+	margin-top: 70px;
+	margin-bottom: 20px;
+}
+
+.top-post .title-all {
+	font-family: 'ubuntu_light';
+	font-size: 16px;
+}
+
+.top-post .title {
+	font-size: 16px;
+}
+
+.top-post .comment-number {
+	font-family: 'ubuntu_light';
+	font-size: 12px;
+}
+
+.top-post>ul>li {
+	margin: 20px 0;
+}
+
+#bottom {
+	margin-top: 35px;
+}
